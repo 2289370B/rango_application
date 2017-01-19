@@ -18,6 +18,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Template dir
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
+# Static dir
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -73,6 +76,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'rango_application.wsgi.application'
 
+STATICFILES_DIRS = [STATIC_DIR,]
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
