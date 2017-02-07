@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from rango.models import Category
 from rango.models import Page
+from django.urls import reverse
 from rango.forms import CategoryForm, PageForm
 
 # index view
