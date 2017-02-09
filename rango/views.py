@@ -35,12 +35,12 @@ def show_category(request, category_name_slug):
 	return render(request, 'rango/category.html', context_dict)
 	
 # add category
+@login_required
 def add_category(request):
 	form = CategoryForm()
 	
 	if request.method == 'POST':
 		form = CategoryForm(request.POST)
-		
 		if form.is_valid():
 			form.save(commit=True)
 			return index(request)
@@ -50,6 +50,7 @@ def add_category(request):
 	return render(request, 'rango/add_category.html', {'form':form})
 
 # add page
+@login_required
 def add_page(request, category_name_slug):
 	try:
 		category = Category.objects.get(slug=category_name_slug)
@@ -128,7 +129,7 @@ def user_login(request):
 # restricted
 @login_required
 def restricted(request):
-	return HttpResponse("Since you're logged in, you can see this text")
+	return render(request, 'rango/restricted.html', {})
 	
 # logout
 @login_required
