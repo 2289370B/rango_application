@@ -8,10 +8,10 @@
 {% block body_block %}
    <h1>Register with Rango</h1>
    {% if registered %}
-      Rango syas: <strong>thank you for registering!</strong>
+      Rango syas: <strong>thank you for registering!</strong><br></br>
       <a href="{% url 'index' %}">Return to the homepage</a>
    {% else %}
-      Rango says: <strong>register here!</strong>
+      Rango says: <strong>register here!</strong><br />
       <form id="user_form" method="post" action="{% url 'register' %}" enctype="multipart/form-data">
       
          {% csrf_token %}
